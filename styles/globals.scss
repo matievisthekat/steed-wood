@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './variables.scss';
+
+@font-face {
+	font-family: 'Argos Bold';
+	font-style: bold;
+	font-weight: 700;
+	src: url(/fonts/Argos-Bold/Argos-Bold.ttf) format('truetype'),
+		url(/fonts/Argos-Bold/Argos-Bold.woff) format('woff'), url(/fonts/Argos-Bold/Argos-Bold.woff2) format('woff' 2),
+		url(/fonts/Argos-Bold/Argos-Bold.otf) format('otf'), url(/fonts/Argos-Bold/Argos-Bold.eot) format('eot'),
+		url(/fonts/Argos-Bold/Argos-Bold.svg) format('svg');
+}
+
+html,
+body {
+	background-color: $beige;
+}

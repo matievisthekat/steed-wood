@@ -1,0 +1,8 @@
+@use 'sass:color';
+@import '../variables.scss';
+
+.nav {
+	width: 100%;
+	background-color: scale-color($color: $beige, $lightness: -5%)
+  
+}
