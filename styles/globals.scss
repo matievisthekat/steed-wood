@@ -9,7 +9,7 @@
 	font-style: bold;
 	font-weight: 700;
 	src: url(/fonts/Argos-Bold/Argos-Bold.ttf) format('truetype'),
-		url(/fonts/Argos-Bold/Argos-Bold.woff) format('woff'), url(/fonts/Argos-Bold/Argos-Bold.woff2) format('woff' 2),
+		url(/fonts/Argos-Bold/Argos-Bold.woff) format('woff'), url(/fonts/Argos-Bold/Argos-Bold.woff2) format('woff2'),
 		url(/fonts/Argos-Bold/Argos-Bold.otf) format('otf'), url(/fonts/Argos-Bold/Argos-Bold.eot) format('eot'),
 		url(/fonts/Argos-Bold/Argos-Bold.svg) format('svg');
 }
@@ -17,4 +17,14 @@
 html,
 body {
 	background-color: $beige;
+	@apply font-gothic;
+}
+
+@layer components {
+	.link {
+		@apply font-bold;
+		@apply hover:underline;
+		@apply text-custom-brown-light;
+		@apply active:text-custom-brown-dark;
+	}
 }

@@ -32,12 +32,55 @@ export default function Head({title, desc, image}: HeadProps) {
 
 			<link rel='shortcut icon' href='/favicon.png' type='image/png' />
 			{/* Preloading fonts */}
-			<link rel='preload' href='/fonts/Argos-Bold/Argos-Bold.ttf' as='font' type='font/truetype' crossOrigin='use-credentials' />
-			<link rel='preload' href='/fonts/Argos-Bold/Argos-Bold.woff' as='font' type='font/woff' crossOrigin='use-credentials' />
-			<link rel='preload' href='/fonts/Argos-Bold/Argos-Bold.woff2' as='font' type='font/woff2' crossOrigin='use-credentials' />
-			<link rel='preload' href='/fonts/Argos-Bold/Argos-Bold.otf' as='font' type='font/otf' crossOrigin='use-credentials' />
-			<link rel='preload' href='/fonts/Argos-Bold/Argos-Bold.eot' as='font' type='font/eot' crossOrigin='use-credentials' />
-			<link rel='preload' href='/fonts/Argos-Bold/Argos-Bold.svg' as='font' type='font/svg' crossOrigin='use-credentials' />
+			<link
+				rel='preload'
+				href='/fonts/Argos-Bold/Argos-Bold.ttf'
+				as='font'
+				type='font/truetype'
+				crossOrigin='use-credentials'
+			/>
+			<link
+				rel='preload'
+				href='/fonts/Argos-Bold/Argos-Bold.woff'
+				as='font'
+				type='font/woff'
+				crossOrigin='use-credentials'
+			/>
+			<link
+				rel='preload'
+				href='/fonts/Argos-Bold/Argos-Bold.woff2'
+				as='font'
+				type='font/woff2'
+				crossOrigin='use-credentials'
+			/>
+			<link
+				rel='preload'
+				href='/fonts/Argos-Bold/Argos-Bold.otf'
+				as='font'
+				type='font/otf'
+				crossOrigin='use-credentials'
+			/>
+			<link
+				rel='preload'
+				href='/fonts/Argos-Bold/Argos-Bold.eot'
+				as='font'
+				type='font/eot'
+				crossOrigin='use-credentials'
+			/>
+			<link
+				rel='preload'
+				href='/fonts/Argos-Bold/Argos-Bold.svg'
+				as='font'
+				type='font/svg'
+				crossOrigin='use-credentials'
+			/>
+
+			<link rel='preconnect' href='https://fonts.googleapis.com' />
+			<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='use-credentials' />
+			<link
+				href='https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800&display=swap'
+				rel='stylesheet'
+			/>
 		</NextHead>
 	);
 }

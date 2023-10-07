@@ -13,7 +13,8 @@ module.exports = {
 				'custom-brown-light': '#402809ff'
 			},
 			fontFamily: {
-				argos: "'Argos Bold', Georgia, serif"
+				argos: "'Argos Bold', Georgia, serif",
+				'gothic': "'Gothic A1', Helvetica, sans-serif"
 			}
 		}
 	},
