@@ -1,12 +1,15 @@
 import {Html, Head, Main, NextScript} from 'next/document';
+import type {DocumentProps} from 'next/document';
+import i18nextConfig from '../next-i18next.config.js';
 
-export default function Document() {
+export default function Document(props: DocumentProps) {
+	const currentLocale = props.__NEXT_DATA__.locale ?? i18nextConfig.i18n.defaultLocale;
+
 	return (
-		<Html lang='en_ZA'>
+		<Html lang={currentLocale}>
 			<Head>
 				<meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
 				<meta charSet='UTF-8' />
-				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 				<meta httpEquiv='X-UA-Compatible' content='IE=7' />
 				<meta name='robots' content='follow, index' />
 

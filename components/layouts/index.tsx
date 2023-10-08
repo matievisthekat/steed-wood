@@ -1,24 +1,27 @@
 import {PropsWithChildren} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import {SSRConfig, useTranslation} from 'next-i18next';
 import styles from '../../styles/layouts/index.module.scss';
 import icon from '../../public/icon.png';
 
-interface Props extends PropsWithChildren {}
+interface Props extends PropsWithChildren, SSRConfig {}
 
-export default function Layout({children}: Props) {
+export default function Layout(props: Props) {
+	const {t} = useTranslation('common');
+
 	return (
 		<>
 			<nav
 				className={`${styles.nav} bg-beige shadow shadow-slate-300 px-4 py-3 flex flex-row flex-nowrap md:justify-normal justify-evenly md:gap-x-12 gap-x-4`}>
 				<div id='about' className='md:order-1 order-2 flex flex-col justify-center'>
 					<Link href='/about' className='link'>
-						<h3 className=''>About</h3>
+						<h3 className=''>{t('navbar.about')}</h3>
 					</Link>
 				</div>
 				<div id='contact' className='md:order-2 order-3 flex flex-col justify-center'>
 					<Link href='/contact' className='link'>
-						<h3>Contact</h3>
+						<h3>{t('navbar.contact')}</h3>
 					</Link>
 				</div>
 				<div
@@ -52,16 +55,16 @@ export default function Layout({children}: Props) {
 				</div>
 				<div id='gallery' className='order-4 flex flex-col justify-center'>
 					<Link href='/gallery' className='link'>
-						<h3>Gallery</h3>
+						<h3>{t('navbar.gallery')}</h3>
 					</Link>
 				</div>
 				<div id='socials' className='order-5 flex flex-col justify-center'>
 					<Link href='/socials' className='link'>
-						<h3>Socials</h3>
+						<h3>{t('navbar.socials')}</h3>
 					</Link>
 				</div>
 			</nav>
-			<main>{children}</main>
+			<main>{props.children}</main>
 		</>
 	);
 }

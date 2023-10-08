@@ -1,6 +1,8 @@
 {
-  "about": "Oor",
-  "contact": "Kontak",
-  "gallery": "Gallery",
-  "socials": "Sosiales"
+	"navbar": {
+		"about": "Oor",
+		"contact": "Kontak",
+		"gallery": "Gallery",
+		"socials": "Sosiales"
+	}
 }

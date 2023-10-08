@@ -1,5 +1,8 @@
 {
-  "about": "About",
-  "contact": "Contact",
-  "gallery": "Gallery"
+	"navbar": {
+		"about": "About",
+		"contact": "Contact",
+		"gallery": "Gallery",
+		"socials": "Socials"
+	}
 }
