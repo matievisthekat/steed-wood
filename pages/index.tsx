@@ -8,26 +8,17 @@ import {useEffect, useState} from 'react';
 
 interface Props extends SSRConfig {}
 
+async function getAllTranslationsServerSide(locale: string) {
+	return serverSideTranslations(locale, ['common'], i18nConfig, i18nConfig.i18n.locales);
+}
+
 export const getStaticProps: GetStaticProps<Props> = async ({locale}) => ({
 	props: {
-		...(await serverSideTranslations(locale ?? i18nConfig.i18n.defaultLocale, ['common']))
+		...(await getAllTranslationsServerSide(locale ?? i18nConfig.i18n.defaultLocale))
 	}
 });
 
 export default function Home(props: InferGetStaticPropsType<typeof getStaticProps>) {
-	const [prefLang, setPrefLang] = useState(i18nConfig.i18n.defaultLocale);
-
-	useEffect(() => {
-		const userLang = window.navigator.language || window.navigator.languages[0];
-		const matchLang = i18nConfig.i18n.locales.find(
-			(l) =>
-				l === userLang || l.toLowerCase().replace('-', '_').split('_')[0] === userLang.toLowerCase().split('_')[0]
-		);
-		if (matchLang) {
-			setPrefLang(matchLang.replace('-', '_'));
-		}
-	}, []);
-
 	return (
 		<Layout {...props}>
 			<Head />
