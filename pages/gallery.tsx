@@ -17,10 +17,13 @@ export const getStaticProps: GetStaticProps<Props> = async ({locale}) => ({
 	}
 });
 
-export default function Home(props: InferGetStaticPropsType<typeof getStaticProps>) {
-	return (
-		<Layout {...props}>
-			<Head />
-		</Layout>
-	);
+export default function Gallery(props: Props) {
+  return (
+    <Layout {...props}>
+      <Head title='Gallery | SW' desc='View my projects. Photos, videos, and  more!' />
+      <div id="gallery">
+        
+      </div>
+    </Layout>
+  )
 }
