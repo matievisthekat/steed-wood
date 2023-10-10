@@ -13,6 +13,7 @@ export default function Layout(props: Props) {
 	const {t, i18n} = useTranslation('common');
 	const router = useRouter();
 	const [prefLang, setPrefLang] = useState(i18nConfig.i18n.defaultLocale);
+	const [selectedLang, setSelectedLang] = useState(i18nConfig.i18n.defaultLocale);
 
 	useEffect(() => {
 		const userLang = window.navigator.language || window.navigator.languages[0];
@@ -24,6 +25,24 @@ export default function Layout(props: Props) {
 			setPrefLang(matchLang.replace('-', '_'));
 		}
 	}, []);
+
+	const footer = {
+		categoryName: 'font-medium tracking-wide text-slate-400',
+		ulClass: 'mt-2 space-y-2 text-slate-200',
+		linkClass: 'transition-colors duration-300 hover:text-slate-300 hover:underline'
+	};
+
+	const changeLang = (lang: string) => {
+		i18n.changeLanguage(lang);
+		router.push(
+			{
+				pathname: router.pathname,
+				query: router.query
+			},
+			router.asPath,
+			{locale: lang, scroll: false, shallow: true}
+		);
+	};
 
 	return (
 		<>
@@ -85,168 +104,122 @@ export default function Layout(props: Props) {
 						<button
 							id='change-lang'
 							className='px-3 py-2 bg-slate-100 active:translate-y-0.5 active:bg-slate-50 transition-colors border-2 border-dotted border-blue-500 hover:bord-erblue-600'
-							onClick={() => {
-								i18n.changeLanguage(prefLang);
-								router.push(
-									{
-										pathname: router.pathname,
-										query: router.query
-									},
-									router.asPath,
-									{locale: prefLang, scroll: false, shallow: true}
-								);
-							}}>
+							onClick={() => changeLang(prefLang)}>
 							Change language to {t(prefLang)}?
 						</button>
 					</div>
 				)}
 			</header>
 			<main>{props.children}</main>
-			<footer className='bg-slate-200'>
+			<footer className={`${styles.footer}`}>
 				<div className='px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
 					<div className='grid row-gap-10 mb-8 lg:grid-cols-6'>
 						<div className='grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4'>
 							<div>
-								<p className='font-medium tracking-wide text-gray-600'>Category</p>
-								<ul className='mt-2 space-y-2 text-gray-800'>
+								<p className={footer.categoryName}>Links</p>
+								<ul className={footer.ulClass}>
 									<li>
-										<Link
-											href='/'
-											className='transition-colors duration-300 hover:text-gray-900'>
-											News
+										<Link href='/about' className={footer.linkClass}>
+											About
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='transition-colors duration-300 hover:text-gray-900'>
-											World
+										<Link href='/contact' className={footer.linkClass}>
+											Contact
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='transition-colors duration-300 hover:text-gray-900'>
-											Games
+										<Link href='/gallery' className={footer.linkClass}>
+											Gallery
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='transition-colors duration-300 hover:text-gray-900'>
-											References
+										<Link href='/resume' className={footer.linkClass}>
+											Resumé
 										</Link>
 									</li>
 								</ul>
 							</div>
 							<div>
-								<p className='font-medium tracking-wide text-gray-600'>Apples</p>
-								<ul className='mt-2 space-y-2'>
+								<p className={footer.categoryName}>Apples</p>
+								<ul className={footer.ulClass}>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Web
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											eCommerce
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Business
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Entertainment
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Portfolio
 										</Link>
 									</li>
 								</ul>
 							</div>
 							<div>
-								<p className='font-medium tracking-wide text-gray-600'>Cherry</p>
-								<ul className='mt-2 space-y-2'>
+								<p className={footer.categoryName}>Cherry</p>
+								<ul className={footer.ulClass}>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Media
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Brochure
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Nonprofit
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Educational
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Projects
 										</Link>
 									</li>
 								</ul>
 							</div>
 							<div>
-								<p className='font-medium tracking-wide text-gray-600'>Business</p>
-								<ul className='mt-2 space-y-2'>
+								<p className={footer.categoryName}>Business</p>
+								<ul className={footer.ulClass}>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Infopreneur
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Personal
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Wiki
 										</Link>
 									</li>
 									<li>
-										<Link
-											href='/'
-											className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200'>
+										<Link href='/' className={footer.linkClass}>
 											Forum
 										</Link>
 									</li>
@@ -254,42 +227,175 @@ export default function Layout(props: Props) {
 							</div>
 						</div>
 						<div className='md:max-w-md lg:col-span-2'>
-							<span className='text-base font-medium tracking-wide text-gray-600'>Subscribe for updates</span>
-							<form className='flex flex-col mt-4 md:flex-row'>
-								<input
-									placeholder='Email'
-									required
-									type='text'
-									className='flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline'
-								/>
+							<span className='text-base font-medium tracking-wide text-gray-200'>Choose a language:</span>
+							<form
+								className='flex flex-col mt-4 md:flex-row'
+								onSubmit={(e) => {
+									e.preventDefault();
+									changeLang(selectedLang);
+								}}>
+								<select
+									name='langs'
+									id='langs'
+									value={selectedLang}
+									onChange={(e) => setSelectedLang(e.target.value)}
+									className='flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-slate-200 border border-gray-300 rounded shadow-sm md:mr-2 md:mb-0'>
+									{i18nConfig.i18n.locales.map((l, i) => (
+										<option key={i} value={l}>
+											{t(l)}
+										</option>
+									))}
+								</select>
 								<button
 									type='submit'
-									className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'>
-									Subscribe
+									className='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-slate-600 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'>
+									Change
 								</button>
 							</form>
-							<p className='mt-4 text-sm text-gray-500'>
-								Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken spare ribs salami.
-							</p>
 						</div>
 					</div>
-					<div className='flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row'>
-						<p className='text-sm text-gray-500'>© Copyright 2020 Lorem Inc. All rights reserved.</p>
+					<div className='flex flex-col justify-between pt-5 pb-10 border-t border-gray-600 sm:flex-row'>
+						<p className='text-sm text-gray-500'>
+							© Copyright 2023 Steed Woodworking (Pty) Ltd. All rights reserved.
+						</p>
 						<div className='flex items-center mt-4 space-x-4 sm:mt-0'>
-							<Link href='/' className='text-gray-500 transition-colors duration-300 hover:text-teal-accent-400'>
-								<svg viewBox='0 0 24 24' fill='currentColor' className='h-5'>
-									<path d='M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z' />
+							<Link
+								target='_blank'
+								href='https://tiktok.com/@steed.wood'
+								className='text-gray-500 transition-colors duration-300 hover:text-teal-accent-400'>
+								<svg viewBox='0 0 512 512' className='h-8'>
+									<defs>
+										<style></style>
+										<linearGradient
+											gradientUnits='userSpaceOnUse'
+											id='linear-gradient'
+											x1='-1.347'
+											x2='510.699'
+											y1='513.347'
+											y2='1.301'>
+											<stop offset='0' stopColor='#111' />
+											<stop offset='1' stopColor='#323232' />
+										</linearGradient>
+										<linearGradient
+											gradientUnits='userSpaceOnUse'
+											id='linear-gradient-2'
+											x1='153.06'
+											x2='368.112'
+											y1='376.967'
+											y2='161.914'>
+											<stop offset='0' stopColor='#b5053c' />
+											<stop offset='0.233' stopColor='#c90441' />
+											<stop offset='0.737' stopColor='#f0014b' />
+											<stop offset='1' stopColor='#ff004f' />
+										</linearGradient>
+										<linearGradient
+											gradientUnits='userSpaceOnUse'
+											id='linear-gradient-3'
+											x1='136.192'
+											x2='362.722'
+											y1='366.084'
+											y2='139.555'>
+											<stop offset='0' stopColor='#00b2c9' />
+											<stop offset='0.283' stopColor='#00c8d4' />
+											<stop offset='0.741' stopColor='#00e6e4' />
+											<stop offset='1' stopColor='#00f1ea' />
+										</linearGradient>
+										<linearGradient
+											gradientUnits='userSpaceOnUse'
+											id='linear-gradient-4'
+											x1='9.279'
+											x2='510.704'
+											y1='506.873'
+											y2='5.448'>
+											<stop offset='0' stopColor='#dde3e4' />
+											<stop offset='1' stopColor='#fcf7f7' />
+										</linearGradient>
+									</defs>
+									<title />
+									<path
+										style={{fill: 'url(#linear-gradient)'}}
+										d='M256,0C114.615,0,0,114.615,0,256S114.615,512,256,512,512,397.385,512,256,397.385,0,256,0Z'
+									/>
+									<path
+										style={{fill: 'url(#linear-gradient-2)'}}
+										d='M393.729,187.531a72.364,72.364,0,0,1-72.365-72.364h-51.7V317.615a43.964,43.964,0,1,1-31.547-42.221V225.138a93.308,93.308,0,1,0,80.839,92.477l1.5-102.332a123.5,123.5,0,0,0,73.267,23.946Z'
+									/>
+									<path
+										style={{fill: 'url(#linear-gradient-3)'}}
+										d='M380.062,173.448A72.364,72.364,0,0,1,307.7,101.083H256V303.531a43.964,43.964,0,1,1-31.547-42.22V211.054a93.308,93.308,0,1,0,80.839,92.477L306.8,201.2a123.5,123.5,0,0,0,73.267,23.945Z'
+									/>
+									<path
+										style={{fill: 'url(#linear-gradient-4)'}}
+										d='M380.062,186.237a72.365,72.365,0,0,1-44.615-28.176,72.346,72.346,0,0,1-26.375-42.894H269.667V317.615a44.015,44.015,0,0,1-81.653,22.815,44.018,44.018,0,0,1,36.439-79.119V224.328a93.3,93.3,0,0,0-72.236,150.841,93.3,93.3,0,0,0,153.075-71.638L306.8,201.2a123.5,123.5,0,0,0,73.267,23.945Z'
+									/>
 								</svg>
 							</Link>
 							<Link href='/' className='text-gray-500 transition-colors duration-300 hover:text-teal-accent-400'>
-								<svg viewBox='0 0 30 30' fill='currentColor' className='h-6'>
-									<circle cx='15' cy='15' r='4' />
-									<path d='M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z' />
+								<svg className='h-8' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+									<rect x='2' y='2' width='28' height='28' rx='6' fill='url(#paint0_radial_87_7153)' />
+									<rect x='2' y='2' width='28' height='28' rx='6' fill='url(#paint1_radial_87_7153)' />
+									<rect x='2' y='2' width='28' height='28' rx='6' fill='url(#paint2_radial_87_7153)' />
+									<path
+										d='M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z'
+										fill='white'
+									/>
+									<path
+										fillRule='evenodd'
+										clipRule='evenodd'
+										d='M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z'
+										fill='white'
+									/>
+									<path
+										fillRule='evenodd'
+										clipRule='evenodd'
+										d='M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z'
+										fill='white'
+									/>
+									<defs>
+										<radialGradient
+											id='paint0_radial_87_7153'
+											cx='0'
+											cy='0'
+											r='1'
+											gradientUnits='userSpaceOnUse'
+											gradientTransform='translate(12 23) rotate(-55.3758) scale(25.5196)'>
+											<stop stopColor='#B13589' />
+											<stop offset='0.79309' stopColor='#C62F94' />
+											<stop offset='1' stopColor='#8A3AC8' />
+										</radialGradient>
+										<radialGradient
+											id='paint1_radial_87_7153'
+											cx='0'
+											cy='0'
+											r='1'
+											gradientUnits='userSpaceOnUse'
+											gradientTransform='translate(11 31) rotate(-65.1363) scale(22.5942)'>
+											<stop stopColor='#E0E8B7' />
+											<stop offset='0.444662' stopColor='#FB8A2E' />
+											<stop offset='0.71474' stopColor='#E2425C' />
+											<stop offset='1' stopColor='#E2425C' stopOpacity='0' />
+										</radialGradient>
+										<radialGradient
+											id='paint2_radial_87_7153'
+											cx='0'
+											cy='0'
+											r='1'
+											gradientUnits='userSpaceOnUse'
+											gradientTransform='translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)'>
+											<stop offset='0.156701' stopColor='#406ADC' />
+											<stop offset='0.467799' stopColor='#6A45BE' />
+											<stop offset='1' stopColor='#6A45BE' stopOpacity='0' />
+										</radialGradient>
+									</defs>
 								</svg>
 							</Link>
 							<Link href='/' className='text-gray-500 transition-colors duration-300 hover:text-teal-accent-400'>
-								<svg viewBox='0 0 24 24' fill='currentColor' className='h-5'>
-									<path d='M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z' />
+								<svg className='h-8' viewBox='126.445 2.281 589 589' xmlns='http://www.w3.org/2000/svg'>
+									<circle cx='420.945' cy='296.781' r='294.5' fill='#3c5a9a' />
+									<path
+										d='M516.704 92.677h-65.239c-38.715 0-81.777 16.283-81.777 72.402.189 19.554 0 38.281 0 59.357H324.9v71.271h46.174v205.177h84.847V294.353h56.002l5.067-70.117h-62.531s.14-31.191 0-40.249c0-22.177 23.076-20.907 24.464-20.907 10.981 0 32.332.032 37.813 0V92.677h-.032z'
+										fill='#ffffff'
+									/>
 								</svg>
 							</Link>
 						</div>
