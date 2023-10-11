@@ -14,7 +14,8 @@ module.exports = {
 			},
 			fontFamily: {
 				argos: "'Argos Bold', Georgia, serif",
-				'gothic': "'Gothic A1', Helvetica, sans-serif"
+				gothic: "'Gothic A1', Helvetica, sans-serif",
+				poppins: "'Poppins', 'Gothic A1', Helvetica, sans-serif"
 			}
 		}
 	},
