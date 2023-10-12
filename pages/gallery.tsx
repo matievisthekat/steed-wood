@@ -6,7 +6,7 @@ import i18nConfig from '../next-i18next.config.js';
 import Head from '../components/Head';
 import Layout from '../components/layouts';
 
-import gallery from './galleryCards';
+import gallery from '../components/galleryCards';
 import Link from 'next/link.js';
 
 interface Props extends SSRConfig {}
