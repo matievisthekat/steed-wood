@@ -146,10 +146,7 @@ export default function Layout(props: Props) {
 						© Copyright 2023 Steed Woodworking (Pty) Ltd. All rights reserved.
 					</p>
 					<div className='flex items-center mt-4 space-x-4 sm:mt-0'>
-						<Link
-							target='_blank'
-							href='https://tiktok.com/@steed.wood'
-							className='text-gray-500 transition-colors duration-300 hover:text-teal-accent-400'>
+						<Link target='_blank' href='https://tiktok.com/@steed.wood'>
 							<svg viewBox='0 0 512 512' className='h-8'>
 								<defs>
 									<style></style>
@@ -217,7 +214,7 @@ export default function Layout(props: Props) {
 								/>
 							</svg>
 						</Link>
-						<Link href='/' className='text-gray-500 transition-colors duration-300 hover:text-teal-accent-400'>
+						<Link target='_blank' href='https://www.instagram.com/steed.wood/'>
 							<svg className='h-8' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
 								<rect x='2' y='2' width='28' height='28' rx='6' fill='url(#paint0_radial_87_7153)' />
 								<rect x='2' y='2' width='28' height='28' rx='6' fill='url(#paint1_radial_87_7153)' />
@@ -276,13 +273,38 @@ export default function Layout(props: Props) {
 								</defs>
 							</svg>
 						</Link>
-						<Link href='/' className='text-gray-500 transition-colors duration-300 hover:text-teal-accent-400'>
+						<Link target='_blank' href='https://www.facebook.com/steed.woodwork'>
 							<svg className='h-8' viewBox='126.445 2.281 589 589' xmlns='http://www.w3.org/2000/svg'>
 								<circle cx='420.945' cy='296.781' r='294.5' fill='#3c5a9a' />
 								<path
 									d='M516.704 92.677h-65.239c-38.715 0-81.777 16.283-81.777 72.402.189 19.554 0 38.281 0 59.357H324.9v71.271h46.174v205.177h84.847V294.353h56.002l5.067-70.117h-62.531s.14-31.191 0-40.249c0-22.177 23.076-20.907 24.464-20.907 10.981 0 32.332.032 37.813 0V92.677h-.032z'
 									fill='#ffffff'
 								/>
+							</svg>
+						</Link>
+						<Link target='_blank' href='https://www.youtube.com/@steed.woodwork'>
+							<svg className='h-8' enable-background='new 0 0 512 512' version='1.1' viewBox='0 0 512 512'>
+								<g id='Layer_1'>
+									<circle cx='256' cy='256' fill='#BB0000' r='238.2' />
+								</g>
+								<g id='Layer_2'>
+									<g id='Layer_2_1_'>
+										<path
+											d='M255.4,364.6c-33.5,0.1-67-0.3-100.4-2.1    c-10.8-0.7-21.7-1.5-31.6-6.9c-6.6-3.6-11.7-8.5-15-15.6c-5.4-11.7-7.1-24-8.1-36.6c-2.2-25.9-2.2-51.9-1.1-77.8    c0.5-13.7,1-27.7,4.3-41.2c1.2-5.2,3-10.4,5.5-15.4c5.8-11.5,15.8-17.3,28-19.6c10.2-2.1,20.6-1.9,31-2.3    c35.1-1.5,70.4-2.2,105.5-1.8c27,0.3,54.2,1,81.4,2.3c8.4,0.4,16.7,0.5,24.7,3.6c10.8,4,18.8,10.8,23.2,21.8    c4.3,10.6,5.9,21.5,6.7,32.8c2.5,30.6,2.5,61.1,0.5,91.6c-0.7,10.3-1.4,20.6-4.1,30.7c-6,23.2-20.6,32.4-42,33.7    c-22.8,1.5-45.5,2.3-68.3,2.6C282.3,364.8,268.9,364.6,255.4,364.6z M222.5,300.4c30.5-16.6,60.5-33.1,91-49.8    c-30.6-16.7-60.6-33.2-91-49.8C222.5,234.2,222.5,267.1,222.5,300.4z'
+											fill='none'
+											stroke='#FAFAFA'
+											stroke-miterlimit='10'
+											stroke-width='15'
+										/>
+										<path
+											d='M222.5,300.4c0-33.3,0-66.1,0-99.6    c30.3,16.6,60.4,33.1,91,49.8C282.9,267.4,252.8,283.7,222.5,300.4z'
+											fill='none'
+											stroke='#FAFAFA'
+											stroke-miterlimit='10'
+											stroke-width='15'
+										/>
+									</g>
+								</g>
 							</svg>
 						</Link>
 					</div>
