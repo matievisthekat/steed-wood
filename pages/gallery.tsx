@@ -46,11 +46,15 @@ function GalleryCard(props: GalleryCardProps) {
 	return (
 		<Link href={`/gallery/${props.slug}`}>
 			<div
-				className='relative bg-white rounded drop-shadow-md transition-all hover:drop-shadow-xl shadow-black hover:cursor-pointer'
+				className='relative rounded-md drop-shadow-md transition-all hover:drop-shadow-xl shadow-black hover:cursor-pointer'
 				data-id={props.slug}>
-				<Image src={props.img} alt={props.alt} width={250} placeholder='blur' className='rounded' />
-				<div id='padded' className='absolute bottom-0 left-0 right-0 top-46 p-2'>
-					<h2 className='font-poppins w-5/6 text-ellipsis line-clamp-1 font-bold text-sm border-b border-b-slate-800 mb-2'>{props.title}</h2>
+				<Image src={props.img} alt={props.alt} width={250} placeholder='blur' className='rounded-md' />
+				<div
+					id='padded'
+					className='bg-gradient-to-t from-beige-dark from-20% via-beige via-75% to-transparent absolute bottom-0 left-0 right-0 top-46 p-2 pt-4 rounded-br-md rounded-bl-md'>
+					<h2 className='font-poppins w-5/6 text-ellipsis line-clamp-1 font-bold text-sm border-b border-b-slate-800 mb-2'>
+						{props.title}
+					</h2>
 					<p className='font-poppins w-full text-ellipsis line-clamp-2 text-sm'>{props.shortDesc}</p>
 				</div>
 			</div>

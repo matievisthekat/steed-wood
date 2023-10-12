@@ -9,6 +9,7 @@ module.exports = {
 		extend: {
 			colors: {
 				beige: '#fff0e5ff',
+				'beige-dark': 'rgb(224, 204, 189)',
 				'custom-brown-dark': '#352109ff',
 				'custom-brown-light': '#402809ff'
 			},
