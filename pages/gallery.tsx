@@ -25,9 +25,9 @@ export default function Gallery(props: Props) {
 	return (
 		<Layout {...props}>
 			<Head title='Gallery | SW' desc='View my projects. Photos, videos, and  more!' />
-			<div id='gallery' className='mx-auto px-12 py-8 flex flex-row flex-wrap gap-6'>
+			<div id='gallery' className='mx-auto px-2 py-8 flex flex-row flex-wrap gap-2 justify-evenly align-middle'>
 				{gallery.map((g, i) => (
-					<GalleryCard {...g} />
+					<GalleryCard key={i} {...g} />
 				))}
 			</div>
 		</Layout>
@@ -44,11 +44,11 @@ interface GalleryCardProps {
 
 function GalleryCard(props: GalleryCardProps) {
 	return (
-		<Link href={`/gallery/${props.slug}`}>
+		<Link href={`/gallery/${props.slug}`} title={props.shortDesc}>
 			<div
-				className='relative rounded-md drop-shadow-md transition-all hover:drop-shadow-xl shadow-black hover:cursor-pointer'
+				className='relative rounded-md drop-shadow-md transition-all hover:drop-shadow-xl shadow-black hover:cursor-pointer w-44 md:w-52'
 				data-id={props.slug}>
-				<Image src={props.img} alt={props.alt} width={250} placeholder='blur' className='rounded-md' />
+				<Image src={props.img} alt={props.alt} placeholder='blur' className='rounded-md' />
 				<div
 					id='padded'
 					className='bg-gradient-to-t from-beige-dark from-20% via-beige via-75% to-transparent absolute bottom-0 left-0 right-0 top-46 p-2 pt-4 rounded-br-md rounded-bl-md'>
