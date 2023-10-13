@@ -99,7 +99,7 @@ export default function Layout(props: Props) {
 							id='change-lang'
 							className='px-3 py-2 bg-slate-100 active:translate-y-0.5 active:bg-slate-50 transition-colors border-2 border-dotted border-blue-500 hover:bord-erblue-600'
 							onClick={() => changeLang(prefLang)}>
-							{t('layout.change_lang', {lng: prefLang})} {t(prefLang)}?
+							{t('layout.change_lang', {lng: prefLang})} {t(prefLang, {lng: prefLang})}?
 						</button>
 					</div>
 				)}
