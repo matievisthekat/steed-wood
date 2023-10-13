@@ -1,6 +1,9 @@
 {
 	"en_ZA": "English",
 	"af": "Afrikaans",
+	"errors": {
+		"404": "Sorry, this website is still under development. Come back later and maybe this page will be here"
+	},
 	"navbar": {
 		"about": "About",
 		"contact": "Contact",

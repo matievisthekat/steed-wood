@@ -1,6 +1,9 @@
 {
 	"en_ZA": "Engels",
 	"af": "Afrikaans",
+	"errors": {
+		"404": "Jammer, hierdie webwerf is nog onder ontwikkeling. Kom later terug en miskien sal hierdie bladsy hier wees"
+	},
 	"navbar": {
 		"about": "Oor",
 		"contact": "Kontak",
