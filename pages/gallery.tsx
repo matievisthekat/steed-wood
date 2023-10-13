@@ -6,7 +6,7 @@ import i18nConfig from '../next-i18next.config.js';
 import Head from '../components/Head';
 import Layout from '../components/layouts';
 
-import gallery from '../components/galleryCards';
+import gallery, {GalleryItem} from '../components/galleryCards';
 import Link from 'next/link.js';
 
 interface Props extends SSRConfig {}
@@ -34,21 +34,25 @@ export default function Gallery(props: Props) {
 	);
 }
 
-interface GalleryCardProps {
-	title: string;
-	shortDesc: string;
-	slug: string;
-	img: StaticImageData;
-	alt: string;
-}
-
-function GalleryCard(props: GalleryCardProps) {
+function GalleryCard(props: GalleryItem) {
 	return (
 		<Link href={`/gallery/${props.slug}`} title={props.shortDesc}>
 			<div
 				className='relative rounded-md drop-shadow-md transition-all hover:drop-shadow-xl shadow-black hover:cursor-pointer w-44 md:w-52'
 				data-id={props.slug}>
-				<Image src={props.img} alt={props.alt} placeholder='blur' className='rounded-md' />
+				<Image
+					src={props.img}
+					alt={props.alt}
+					placeholder='blur'
+					className={`rounded-md ${props.forSale && 'border border-red-600'}`}
+				/>
+				{props.forSale && (
+					<span
+						id='for-sale'
+						className='absolute top-0 right-0 text-red-600 rounded-md font-light text-sm font-poppins px-1 py-0.5'>
+						For Sale
+					</span>
+				)}
 				<div
 					id='padded'
 					className='bg-gradient-to-t from-beige-dark from-20% via-beige via-75% to-transparent absolute bottom-0 left-0 right-0 top-46 p-2 pt-4 rounded-br-md rounded-bl-md'>

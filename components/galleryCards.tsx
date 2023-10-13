@@ -1,3 +1,4 @@
+import {StaticImageData} from 'next/image';
 import cedarCandleHolderTall from '../public/img/gallery/cedar-candleholder-tall.png';
 import oregonPineChair from '../public/img/gallery/oregon-pine-chair.png';
 import yellowWoodLamp from '../public/img/gallery/yellow-wood-lamp.png';
@@ -10,7 +11,16 @@ import hexagonBox from '../public/img/gallery/hexagon-box.png';
 import smallBench from '../public/img/gallery/small-bench.png';
 import chest from '../public/img/gallery/chest.png';
 
-const gallery = [
+export interface GalleryItem {
+	title: string;
+	slug: string;
+	shortDesc: string;
+	img: StaticImageData;
+	alt: string;
+	forSale?: boolean;
+}
+
+const gallery: GalleryItem[] = [
 	{
 		title: 'Cedar Candle Holder Set',
 		slug: 'cedar-candle-holders',
@@ -30,14 +40,16 @@ const gallery = [
 		slug: 'yellowwood-lamp',
 		shortDesc: "Beautiful figured Yellowwood and Pine lamp. Made with yellowwood from my Oupa's garden",
 		img: yellowWoodLamp,
-		alt: 'Yellowwood lamp with pine base'
+		alt: 'Yellowwood lamp with pine base',
+		forSale: true
 	},
 	{
 		title: 'Yellowwood & Bubinga Lamp',
 		slug: 'yellowwood-bubinga-lamp',
 		shortDesc: "Yellowwood from my Oupa's garden with a Bubinga base. One of my favourite lamps by far",
 		img: yellowWoodBubingaLamp,
-		alt: 'Yellowwood lamp with a bubinga base'
+		alt: 'Yellowwood lamp with a bubinga base',
+		forSale: true
 	},
 	{
 		title: 'Imbuia & Bubinga Lamp',
@@ -52,7 +64,8 @@ const gallery = [
 		slug: 'cedar-bubinga-lamp',
 		shortDesc: 'Vintage-style lamp made from aromatic Cedar and Bubinga',
 		img: cedarLamp,
-		alt: 'Cedar wood lamp with bubinga base'
+		alt: 'Cedar wood lamp with bubinga base',
+		forSale: true
 	},
 	{
 		title: 'Medicine Cabinet',
@@ -66,7 +79,8 @@ const gallery = [
 		slug: 'serviette-holder',
 		shortDesc: 'A simple serviette holder made from Pine planks and dowels',
 		img: servietteHolder,
-		alt: 'Simple serviette holder'
+		alt: 'Simple serviette holder',
+		forSale: true
 	},
 	{
 		title: 'Hexangonal Box',
