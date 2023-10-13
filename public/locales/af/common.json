@@ -6,5 +6,8 @@
 		"contact": "Kontak",
 		"gallery": "Gallery",
 		"socials": "Sosiales"
+	},
+	"layout": {
+		"change_lang": "Verander taal na"
 	}
 }

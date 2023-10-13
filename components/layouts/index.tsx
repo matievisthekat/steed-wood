@@ -26,12 +26,6 @@ export default function Layout(props: Props) {
 		}
 	}, []);
 
-	const footer = {
-		categoryName: 'font-medium tracking-wide text-slate-400',
-		ulClass: 'mt-2 space-y-2 text-slate-200',
-		linkClass: 'transition-colors duration-300 hover:text-slate-300 hover:underline'
-	};
-
 	const changeLang = (lang: string) => {
 		i18n.changeLanguage(lang);
 		router.push(
@@ -105,7 +99,7 @@ export default function Layout(props: Props) {
 							id='change-lang'
 							className='px-3 py-2 bg-slate-100 active:translate-y-0.5 active:bg-slate-50 transition-colors border-2 border-dotted border-blue-500 hover:bord-erblue-600'
 							onClick={() => changeLang(prefLang)}>
-							Change language to {t(prefLang)}?
+							{t('layout.change_lang', {lng: prefLang})} {t(prefLang)}?
 						</button>
 					</div>
 				)}
