@@ -1,6 +1,7 @@
 import {Html, Head, Main, NextScript} from 'next/document';
 import type {DocumentProps} from 'next/document';
 import i18nextConfig from '../next-i18next.config.js';
+import NextNProgress from 'nextjs-progressbar';
 
 export default function Document(props: DocumentProps) {
 	const currentLocale = props.__NEXT_DATA__.locale ?? i18nextConfig.i18n.defaultLocale;
@@ -67,6 +68,7 @@ export default function Document(props: DocumentProps) {
 				<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap' rel='stylesheet' />
 			</Head>
 			<body>
+				<NextNProgress color='#352109ff' />
 				<Main />
 				<NextScript />
 			</body>
