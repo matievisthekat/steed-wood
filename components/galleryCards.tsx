@@ -8,6 +8,7 @@ import medicineCabinet from '../public/img/gallery/medicine-cabinet.png';
 import servietteHolder from '../public/img/gallery/serviette-holder.png';
 import hexagonBox from '../public/img/gallery/hexagon-box.png';
 import smallBench from '../public/img/gallery/small-bench.png';
+import chest from '../public/img/gallery/chest.png';
 
 const gallery = [
 	{
@@ -81,6 +82,13 @@ const gallery = [
 		shortDesc: 'A very simple Pine bench I made a long time ago. Mortise and tenon joints for each of the legs',
 		img: smallBench,
 		alt: 'Small pine bench'
+	},
+	{
+		title: 'Plywood Chest',
+		slug: 'plywood-chest',
+		shortDesc: 'A practical Chest made from Pine Plywood. With built-in drawer boxes inside',
+		img: chest,
+		alt: 'Pine plywood chest'
 	}
 ];
 
