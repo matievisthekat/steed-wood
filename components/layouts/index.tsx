@@ -95,7 +95,7 @@ export default function Layout(props: Props) {
 					</div>
 				</nav>
 				{i18n?.language !== prefLang && (
-					<div id='extra' className='mx-auto md:w-min max-h-14 md:mt-0 mt-2'>
+					<div id='extra' className='mx-auto md:w-min md:block md:relative max-h-14 md:mt-0 hidden'>
 						<button
 							id='change-lang'
 							className='px-3 py-2 bg-slate-100 active:translate-y-0.5 active:bg-slate-50 transition-colors border-2 border-dotted border-blue-500 hover:bord-erblue-600'
@@ -105,6 +105,16 @@ export default function Layout(props: Props) {
 					</div>
 				)}
 			</header>
+			{i18n?.language !== prefLang && (
+				<div id='extra' className='max-h-14 md:hidden fixed bottom-5 right-5 z-30'>
+					<button
+						id='change-lang'
+						className='px-3 py-2 bg-slate-100 active:translate-y-0.5 active:bg-slate-50 transition-colors border-2 border-dotted border-blue-500 hover:bord-erblue-600'
+						onClick={() => changeLang(prefLang)}>
+						{t('layout.change_lang', {lng: prefLang})} {t(prefLang, {lng: prefLang})}?
+					</button>
+				</div>
+			)}
 			<main className='relative h-full w-full min-h-full'>{props.children}</main>
 			<footer className={`${styles.footer} px-4 pt-16 mx-auto w-full relative z-10 md:px-24 lg:px-8`}>
 				<div className='flex flex-row flex-wrap justify-center align-middle mb-8'>
