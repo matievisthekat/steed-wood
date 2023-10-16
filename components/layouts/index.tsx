@@ -42,7 +42,7 @@ export default function Layout(props: Props) {
 	return (
 		<>
 			<header
-				className={`${styles.header} sticky bg-beige shadow shadow-slate-300 px-4 py-3 flex flex-row flex-wrap w-full`}>
+				className={`${styles.header} sticky top-0 bg-beige shadow shadow-slate-300 px-4 py-3 flex flex-row flex-wrap w-full z-30`}>
 				<nav className='flex flex-row flex-nowrap md:w-4/5 w-full md:justify-normal justify-evenly md:gap-x-8 gap-x-1 max-w-full'>
 					<div id='about' className='md:order-1 order-2 flex flex-col justify-center'>
 						<Link href='/about' className='link'>
@@ -105,8 +105,8 @@ export default function Layout(props: Props) {
 					</div>
 				)}
 			</header>
-			<main>{props.children}</main>
-			<footer className={`${styles.footer} px-4 pt-16 mx-auto w-full md:px-24 lg:px-8`}>
+			<main className='relative h-full w-full min-h-full'>{props.children}</main>
+			<footer className={`${styles.footer} px-4 pt-16 mx-auto w-full relative z-10 md:px-24 lg:px-8`}>
 				<div className='flex flex-row flex-wrap justify-center align-middle mb-8'>
 					<div className=''>
 						<span className='text-base font-medium tracking-wide text-gray-200'>Choose a language:</span>

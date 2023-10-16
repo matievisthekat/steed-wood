@@ -22,9 +22,7 @@ export default function Home(props: InferGetStaticPropsType<typeof getStaticProp
 	return (
 		<Layout {...props}>
 			<Head />
-			<div
-				id='welcome'
-				className='w-full pt-10 text-center bg-blue-200'>
+			<div id='welcome' className='w-full max-h-1/3 pt-32 text-center bg-blue-100 fixed z-0 top-0'>
 				<div className='text my-16'>
 					<h1 className='font-argos text-4xl md:text-5xl font-bold '>Welcome</h1>
 					<span className='text-sm font-semibold font-gothic'>
@@ -43,7 +41,7 @@ export default function Home(props: InferGetStaticPropsType<typeof getStaticProp
 							fillRule='evenodd'
 							clipRule='evenodd'
 							d='M0 17.5804L50 27.4048C100 37.2292 200 56.878 300 59.3341C400 61.7902 500 47.0536 600 32.317C700 17.5804 800 2.84382 900 0.387716C1000 -2.06838 1100 7.75602 1150 12.6682L1200 17.5804V106H1150C1100 106 1000 106 900 106C800 106 700 106 600 106C500 106 400 106 300 106C200 106 100 106 50 106H0V17.5804Z'
-							fill='#af864c'
+							fill='#656e32'
 						/>
 					</svg>
 					<svg
@@ -57,12 +55,12 @@ export default function Home(props: InferGetStaticPropsType<typeof getStaticProp
 							fillRule='evenodd'
 							clipRule='evenodd'
 							d='M0 17.5804L50 27.4048C100 37.2292 200 56.878 300 59.3341C400 61.7902 500 47.0536 600 32.317C700 17.5804 800 2.84382 900 0.387716C1000 -2.06838 1100 7.75602 1150 12.6682L1200 17.5804V106H1150C1100 106 1000 106 900 106C800 106 700 106 600 106C500 106 400 106 300 106C200 106 100 106 50 106H0V17.5804Z'
-							fill='#ca9c60'
+							fill='#8b993d'
 						/>
 					</svg>
 				</div>
 			</div>
-			<section className='py-16'></section>
+			<div className='py-32 bg-beige-dark mt-[33.33%] relative z-20'></div>
 		</Layout>
 	);
 }
