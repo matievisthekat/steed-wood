@@ -24,7 +24,7 @@ export default function Home(props: InferGetStaticPropsType<typeof getStaticProp
 			<Head />
 			<div
 				id='welcome'
-				className='w-full pt-10 pb-[22px] text-center bg-blue-200 border-b-4 border-custom-brown-dark border-solid'>
+				className='w-full pt-10 text-center bg-blue-200'>
 				<div className='text my-16'>
 					<h1 className='font-argos text-4xl md:text-5xl font-bold '>Welcome</h1>
 					<span className='text-sm font-semibold font-gothic'>

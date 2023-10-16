@@ -4,8 +4,9 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {SSRConfig, useTranslation} from 'next-i18next';
 import i18nConfig from '../../next-i18next.config.js';
+import theme from 'tailwindcss/defaultTheme.js';
 import styles from '../../styles/layouts/index.module.scss';
-import icon from '../../public/icon.png';
+import icon from '../../public/icon-64.png';
 
 interface Props extends PropsWithChildren, SSRConfig {}
 
@@ -42,7 +43,7 @@ export default function Layout(props: Props) {
 		<>
 			<header
 				className={`${styles.header} sticky bg-beige shadow shadow-slate-300 px-4 py-3 flex flex-row flex-wrap w-full`}>
-				<nav className='flex flex-row flex-nowrap md:w-4/5 w-full md:justify-normal justify-evenly md:gap-x-12 gap-x-4'>
+				<nav className='flex flex-row flex-nowrap md:w-4/5 w-full md:justify-normal justify-evenly md:gap-x-8 gap-x-1 max-w-full'>
 					<div id='about' className='md:order-1 order-2 flex flex-col justify-center'>
 						<Link href='/about' className='link'>
 							<h3 className=''>{t('navbar.about')}</h3>
@@ -56,12 +57,12 @@ export default function Layout(props: Props) {
 					<div
 						id='logo-and-name'
 						className='md:order-first order-3 flex md:flex-row flex-col flex-nowrap justify-between items-center md:gap-3 gap-0'>
-						<div id='logo' className='relative'>
+						<div id='logo' className='relative max-w-[48px] md:max-w-[64px]'>
 							<Link href='/'>
 								<Image
 									src={icon}
-									width={64}
 									height={64}
+									width={64}
 									alt='Horse head logo'
 									quality={80}
 									placeholder='blur'
@@ -73,10 +74,10 @@ export default function Layout(props: Props) {
 						</div>
 						<div id='name' className='h-full'>
 							<Link href='/'>
-								<h1 className='text-custom-brown-dark uppercase font-argos text-[1.5rem] tracking-widest mt-1.5'>
+								<h1 className='text-custom-brown-dark uppercase font-argos md:text-[1.5rem] text-[1.2rem] tracking-widest mt-1.5'>
 									Steed
 								</h1>
-								<h2 className='text-custom-brown-dark uppercase font-argos text-[0.7rem] tracking-tighter -mt-1'>
+								<h2 className='text-custom-brown-dark uppercase font-argos md:text-[0.7rem] text-[0.55rem] tracking-tighter -mt-1'>
 									Woodworking
 								</h2>
 							</Link>
