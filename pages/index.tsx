@@ -4,7 +4,7 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import i18nConfig from '../next-i18next.config.js';
 import Head from '../components/Head';
 import Layout from '../components/layouts';
-import styles from '../styles/pages/index.module.scss';
+import {useEffect, useRef} from 'react';
 
 interface Props extends SSRConfig {}
 
@@ -19,10 +19,29 @@ export const getStaticProps: GetStaticProps<Props> = async ({locale}) => ({
 });
 
 export default function Home(props: InferGetStaticPropsType<typeof getStaticProps>) {
+	const welcomeRef = useRef<HTMLDivElement | null>();
+	const restRef = useRef<HTMLDivElement | null>();
+
+	const marginTop = () => {
+		if (welcomeRef.current && restRef.current) {
+			const welcome = welcomeRef.current.getBoundingClientRect();
+			const newMargin = welcome.height;
+			restRef.current.setAttribute('style', `margin-top: ${newMargin-110}px;`);
+		}
+	};
+
+	useEffect(() => {
+		window.onresize = () => marginTop();
+		marginTop();
+	}, []);
+
 	return (
 		<Layout {...props}>
 			<Head />
-			<div id='welcome' className='w-full max-h-1/3 pt-32 text-center bg-blue-100 fixed z-0 top-0'>
+			<div
+				id='welcome'
+				ref={(e) => (welcomeRef.current = e)}
+				className='w-full max-h-1/3 pt-32 text-center bg-blue-100 fixed z-0 top-0'>
 				<div className='text my-16'>
 					<h1 className='font-argos text-4xl md:text-5xl font-bold '>Welcome</h1>
 					<span className='text-sm font-semibold font-gothic'>
@@ -60,7 +79,10 @@ export default function Home(props: InferGetStaticPropsType<typeof getStaticProp
 					</svg>
 				</div>
 			</div>
-			<div className='py-32 bg-beige-dark mt-[33.33%] relative z-20'></div>
+			<div
+				id='-rest-of-page'
+				ref={(e) => (restRef.current = e)}
+				className='py-32 bg-beige-dark relative z-20'></div>
 		</Layout>
 	);
 }
