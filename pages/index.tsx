@@ -5,6 +5,8 @@ import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import i18nConfig from '../next-i18next.config.js';
 import Head from '../components/Head';
 import Layout from '../components/layouts';
+
+import me from '../public/img/me.jpg';
 import hills from '../public/hills.svg';
 
 interface Props extends SSRConfig {}
@@ -34,7 +36,29 @@ export default function Home(props: InferGetStaticPropsType<typeof getStaticProp
 					<Image src={hills} alt='Hills with two trees' className='w-full' />
 				</div>
 			</div>
-			<div className='py-32 bg-beige-dark relative z-20'></div>
+			<div className='sm:px-16 px-10 py-10 bg-beige-dark flex sm:flex-nowrap flex-wrap gap-6'>
+				<div className=''>
+					<Image
+						src={me}
+						placeholder='blur'
+						width={470}
+						alt='Matthew Stead'
+						className='rounded border-custom-brown-dark border-2 mx-auto w-full'
+					/>
+				</div>
+				<div>
+					<p className='font-gothic mb-2'>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui voluptatibus sunt architecto consequuntur
+						tempora odio odit vel atque nemo. Repellat delectus quo necessitatibus neque consectetur excepturi
+						cumque itaque adipisci rerum!
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur architecto provident officia quae,
+						aspernatur consectetur debitis! Corporis voluptas corrupti, dolores quos porro facilis repellendus
+						praesentium earum modi magni sequi accusamus!
+					</p>
+				</div>
+			</div>
 		</Layout>
 	);
 }
