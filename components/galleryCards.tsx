@@ -1,5 +1,5 @@
 import {StaticImageData} from 'next/image';
-import cedarCandleHolderTall from '../public/img/gallery/cedar-candleholder-tall.png';
+import cedarCandleHolderThree from '../public/img/gallery/cedar-candleholder-three.png';
 import oregonPineChair from '../public/img/gallery/oregon-pine-chair.png';
 import yellowWoodLamp from '../public/img/gallery/yellow-wood-lamp.png';
 import yellowWoodBubingaLamp from '../public/img/gallery/yellow-wood-bubinga-lamp.png';
@@ -15,31 +15,31 @@ export interface GalleryItem {
 	title: string;
 	slug: string;
 	shortDesc: string;
-	img: StaticImageData;
+	cover: StaticImageData;
 	alt: string;
 	forSale?: boolean;
 }
 
 const gallery: GalleryItem[] = [
 	{
-		title: 'Cedar Candle Holder Set',
+		title: 'Cedar Candle Holder Sets',
 		slug: 'cedar-candle-holders',
-		shortDesc: 'A set of large candle holders made from aromatic Cedar wood',
-		img: cedarCandleHolderTall,
+		shortDesc: 'Multiple sets of Cedar candle holders I have made. Each set has its own unique design style',
+		cover: cedarCandleHolderThree,
 		alt: 'Purple cedar wood candle holder'
 	},
 	{
 		title: 'Oregon Pine Chair',
 		slug: 'oregon-pine-chair',
 		shortDesc: 'Made from recovered Oregon Pine, this chair involved a lot of complicated joinery',
-		img: oregonPineChair,
+		cover: oregonPineChair,
 		alt: 'Upholstered chair made from Oregon Pine'
 	},
 	{
 		title: 'Yellowwood Lamp',
 		slug: 'yellowwood-lamp',
 		shortDesc: "Beautiful figured Yellowwood and Pine lamp. Made with yellowwood from my Oupa's garden",
-		img: yellowWoodLamp,
+		cover: yellowWoodLamp,
 		alt: 'Yellowwood lamp with pine base',
 		forSale: true
 	},
@@ -47,7 +47,7 @@ const gallery: GalleryItem[] = [
 		title: 'Yellowwood & Bubinga Lamp',
 		slug: 'yellowwood-bubinga-lamp',
 		shortDesc: "Yellowwood from my Oupa's garden with a Bubinga base. One of my favourite lamps by far",
-		img: yellowWoodBubingaLamp,
+		cover: yellowWoodBubingaLamp,
 		alt: 'Yellowwood lamp with a bubinga base',
 		forSale: true
 	},
@@ -56,14 +56,14 @@ const gallery: GalleryItem[] = [
 		slug: 'imbuia-bubinga-lamp',
 		shortDesc:
 			'Lamp made from Imbuia (Brazillian Walnut) and Bubinga. The Imbuia was a gift from my Oupa so it is quite sentimental',
-		img: imbuiaLamp,
+		cover: imbuiaLamp,
 		alt: 'Imbuia lamp with bubinga base'
 	},
 	{
 		title: 'Cedar & Bubinga Lamp',
 		slug: 'cedar-bubinga-lamp',
 		shortDesc: 'Vintage-style lamp made from aromatic Cedar and Bubinga',
-		img: cedarLamp,
+		cover: cedarLamp,
 		alt: 'Cedar wood lamp with bubinga base',
 		forSale: true
 	},
@@ -71,14 +71,14 @@ const gallery: GalleryItem[] = [
 		title: 'Medicine Cabinet',
 		slug: 'medicine-cabinet',
 		shortDesc: 'A small medicine cabinet made from Oregon Pine. No complex joinery in this one',
-		img: medicineCabinet,
+		cover: medicineCabinet,
 		alt: 'Oregon pine medicine cabinet with mirror'
 	},
 	{
 		title: 'Serviette Holder',
 		slug: 'serviette-holder',
 		shortDesc: 'A simple serviette holder made from Pine planks and dowels',
-		img: servietteHolder,
+		cover: servietteHolder,
 		alt: 'Simple serviette holder',
 		forSale: true
 	},
@@ -87,21 +87,21 @@ const gallery: GalleryItem[] = [
 		slug: 'hexagonal-box',
 		shortDesc:
 			"A simple hexagonal box made from Pine. Some maths needed to figure out the angles on this one, but it wasn't too bad",
-		img: hexagonBox,
+		cover: hexagonBox,
 		alt: 'Hexagonal box made from pine wood'
 	},
 	{
 		title: 'Small Pine Bench',
 		slug: 'small-pine-bench',
 		shortDesc: 'A very simple Pine bench I made a long time ago. Mortise and tenon joints for each of the legs',
-		img: smallBench,
+		cover: smallBench,
 		alt: 'Small pine bench'
 	},
 	{
 		title: 'Plywood Chest',
 		slug: 'plywood-chest',
 		shortDesc: 'A practical Chest made from Pine Plywood. With built-in drawer boxes inside',
-		img: chest,
+		cover: chest,
 		alt: 'Pine plywood chest'
 	}
 ];

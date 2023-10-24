@@ -41,7 +41,7 @@ function GalleryCard(props: GalleryItem) {
 				className='relative rounded-md drop-shadow-md transition-all hover:drop-shadow-xl shadow-black hover:cursor-pointer w-44 md:w-52'
 				data-id={props.slug}>
 				<Image
-					src={props.img}
+					src={props.cover}
 					alt={props.alt}
 					placeholder='blur'
 					className={`rounded-md ${props.forSale && 'border border-red-600'}`}
