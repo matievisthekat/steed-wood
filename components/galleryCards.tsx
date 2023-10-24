@@ -12,28 +12,19 @@ import smallBench from '../public/img/gallery/small-bench.png';
 import chest from '../public/img/gallery/chest.png';
 
 export interface GalleryItem {
-	title: string;
 	slug: string;
-	shortDesc: string;
 	cover: StaticImageData;
-	alt: string;
 	forSale?: boolean;
 }
 
 const gallery: GalleryItem[] = [
 	{
-		title: 'Cedar Candle Holder Sets',
 		slug: 'cedar-candle-holders',
-		shortDesc: 'Multiple sets of Cedar candle holders I have made. Each set has its own unique design style',
-		cover: cedarCandleHolderThree,
-		alt: 'Purple cedar wood candle holder'
+		cover: cedarCandleHolderThree
 	},
 	{
-		title: 'Oregon Pine Chair',
 		slug: 'oregon-pine-chair',
-		shortDesc: 'Made from recovered Oregon Pine, this chair involved a lot of complicated joinery',
-		cover: oregonPineChair,
-		alt: 'Upholstered chair made from Oregon Pine'
+		cover: oregonPineChair
 	},
 	{
 		title: 'Yellowwood Lamp',

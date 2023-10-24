@@ -12,5 +12,17 @@
 	},
 	"layout": {
 		"change_lang": "Change language to"
+	},
+	"gallery": {
+		"cedar-candle-holders": {
+			"title": "Cedar Candle Holder Sets",
+			"shortDesc": "Multiple sets of Cedar candle holders I have made. Each set has its own unique design style",
+			"alt": "Purple cedar wood candle holder"
+		},
+		"oregon-pine-chair": {
+			"title": "Oregon Pine Chair",
+			"shortDesc": "Made from recovered Oregon Pine, this chair involved a lot of complicated joinery",
+			"alt": "Upholstered chair made from Oregon Pine"
+		}
 	}
 }
