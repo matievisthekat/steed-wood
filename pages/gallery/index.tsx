@@ -12,7 +12,7 @@ import Link from 'next/link.js';
 interface Props extends SSRConfig {}
 
 async function getAllTranslationsServerSide(locale: string) {
-	return serverSideTranslations(locale, ['common'], i18nConfig, i18nConfig.i18n.locales);
+	return serverSideTranslations(locale, ['common', 'gallery'], i18nConfig, i18nConfig.i18n.locales);
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({locale}) => ({
@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({locale}) => ({
 });
 
 export default function Gallery(props: Props) {
-	const {t} = useTranslation('common');
+	const {t} = useTranslation('gallery');
 	return (
 		<Layout {...props}>
 			<Head title='Gallery | SW' desc='View my projects. Photos, videos, and  more!' />
@@ -51,7 +51,7 @@ function GalleryCard({cover, slug, forSale, t}: GalleryItem & {t: TFunction}) {
 					<span
 						id='for-sale'
 						className='absolute top-0 right-0 text-red-600 rounded-md font-light text-sm font-poppins px-1 py-0.5'>
-						For Sale
+						{t('for-sale')}
 					</span>
 				)}
 				<div

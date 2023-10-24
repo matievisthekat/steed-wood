@@ -14,84 +14,67 @@ import chest from '../public/img/gallery/chest.png';
 export interface GalleryItem {
 	slug: string;
 	cover: StaticImageData;
+	alt: string;
 	forSale?: boolean;
 }
 
 const gallery: GalleryItem[] = [
 	{
 		slug: 'cedar-candle-holders',
-		cover: cedarCandleHolderThree
+		cover: cedarCandleHolderThree,
+		alt: 'Purple cedar wood candle holder'
 	},
 	{
 		slug: 'oregon-pine-chair',
-		cover: oregonPineChair
+		cover: oregonPineChair,
+		alt: 'Upholstered chair made from Oregon Pine'
 	},
 	{
-		title: 'Yellowwood Lamp',
 		slug: 'yellowwood-lamp',
-		shortDesc: "Beautiful figured Yellowwood and Pine lamp. Made with yellowwood from my Oupa's garden",
 		cover: yellowWoodLamp,
-		alt: 'Yellowwood lamp with pine base',
-		forSale: true
+		forSale: true,
+		alt: 'Yellowwood lamp with pine base'
 	},
 	{
-		title: 'Yellowwood & Bubinga Lamp',
 		slug: 'yellowwood-bubinga-lamp',
-		shortDesc: "Yellowwood from my Oupa's garden with a Bubinga base. One of my favourite lamps by far",
 		cover: yellowWoodBubingaLamp,
-		alt: 'Yellowwood lamp with a bubinga base',
-		forSale: true
+		forSale: true,
+		alt: 'Yellowwood lamp with a bubinga base'
 	},
 	{
-		title: 'Imbuia & Bubinga Lamp',
 		slug: 'imbuia-bubinga-lamp',
-		shortDesc:
-			'Lamp made from Imbuia (Brazillian Walnut) and Bubinga. The Imbuia was a gift from my Oupa so it is quite sentimental',
 		cover: imbuiaLamp,
 		alt: 'Imbuia lamp with bubinga base'
 	},
 	{
-		title: 'Cedar & Bubinga Lamp',
 		slug: 'cedar-bubinga-lamp',
-		shortDesc: 'Vintage-style lamp made from aromatic Cedar and Bubinga',
 		cover: cedarLamp,
-		alt: 'Cedar wood lamp with bubinga base',
-		forSale: true
+		forSale: true,
+		alt: 'Cedar wood lamp with bubinga base'
 	},
 	{
-		title: 'Medicine Cabinet',
 		slug: 'medicine-cabinet',
-		shortDesc: 'A small medicine cabinet made from Oregon Pine. No complex joinery in this one',
 		cover: medicineCabinet,
 		alt: 'Oregon pine medicine cabinet with mirror'
 	},
 	{
-		title: 'Serviette Holder',
 		slug: 'serviette-holder',
-		shortDesc: 'A simple serviette holder made from Pine planks and dowels',
 		cover: servietteHolder,
-		alt: 'Simple serviette holder',
-		forSale: true
+		forSale: true,
+		alt: 'Simple serviette holder'
 	},
 	{
-		title: 'Hexangonal Box',
 		slug: 'hexagonal-box',
-		shortDesc:
-			"A simple hexagonal box made from Pine. Some maths needed to figure out the angles on this one, but it wasn't too bad",
 		cover: hexagonBox,
 		alt: 'Hexagonal box made from pine wood'
 	},
 	{
-		title: 'Small Pine Bench',
 		slug: 'small-pine-bench',
-		shortDesc: 'A very simple Pine bench I made a long time ago. Mortise and tenon joints for each of the legs',
 		cover: smallBench,
 		alt: 'Small pine bench'
 	},
 	{
-		title: 'Plywood Chest',
 		slug: 'plywood-chest',
-		shortDesc: 'A practical Chest made from Pine Plywood. With built-in drawer boxes inside',
 		cover: chest,
 		alt: 'Pine plywood chest'
 	}

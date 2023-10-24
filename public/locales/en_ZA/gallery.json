@@ -1,0 +1,47 @@
+{
+	"for-sale": "For Sale",
+	"cedar-candle-holders": {
+		"title": "Cedar Candle Holder Sets",
+		"shortDesc": "Multiple sets of Cedar candle holders I have made. Each set has its own unique design style"
+	},
+	"oregon-pine-chair": {
+		"title": "Oregon Pine Chair",
+		"shortDesc": "Made from recovered Oregon Pine, this chair involved a lot of complicated joinery"
+	},
+	"yellowwood-lamp": {
+		"title": "Yellowwood Lamp",
+		"shortDesc": "Beautiful figured Yellowwood and Pine lamp. Made with yellowwood from my Oupa's garden"
+	},
+	"yellowwood-bubinga-lamp": {
+		"title": "Yellowwood & Bubinga Lamp",
+		"shortDesc": "Yellowwood from my Oupa's garden with a Bubinga base. One of my favourite lamps by far"
+	},
+	"imbuia-bubinga-lamp": {
+		"title": "Imbuia & Bubinga Lamp",
+		"shortDesc": "Lamp made from Imbuia (Brazilian Walnut) and Bubinga. The Imbuia was a gift from my Oupa so it is quite sentimental"
+	},
+	"cedar-bubinga-lamp": {
+		"title": "Cedar & Bubinga Lamp",
+		"shortDesc": "Vintage-style lamp made from aromatic Cedar and Bubinga"
+	},
+	"medicine-cabinet": {
+		"title": "Medicine Cabinet",
+		"shortDesc": "A small medicine cabinet made from Oregon Pine. No complex joinery in this one"
+	},
+	"serviette-holder": {
+		"title": "serviette-holder",
+		"shortDesc": "A simple serviette holder made from Pine planks and dowels"
+	},
+	"hexagonal-box": {
+		"title": "Hexagonal Box",
+		"shortDesc": "A simple hexagonal box made from Pine. Some maths needed to figure out the angles on this one, but it wasn't too bad"
+	},
+	"small-pine-bench": {
+		"title": "Small Pine Bench",
+		"shortDesc": "A very simple Pine bench I made a long time ago. Mortise and tenon joints for each of the legs"
+	},
+	"plywood-chest": {
+		"title": "Plywood Chest",
+		"shortDesc": "A practical Chest made from Pine Plywood. With built-in drawer boxes inside"
+	}
+}
