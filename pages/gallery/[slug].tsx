@@ -6,8 +6,7 @@ import {useRouter} from 'next/router';
 import Layout from '../../components/layouts';
 import Head from '../../components/Head';
 
-import gallery, {GalleryItem} from '../../components/galleryCards';
-import {useEffect, useState} from 'react';
+import gallery from '../../components/galleryCards';
 
 interface Props extends SSRConfig {}
 
@@ -20,6 +19,13 @@ export const getStaticProps: GetStaticProps<Props> = async ({locale}) => ({
 		...(await getAllTranslationsServerSide(locale ?? i18nConfig.i18n.defaultLocale))
 	}
 });
+
+export function getStaticPaths() {
+	return {
+		paths: gallery.map((g) => ({params: {slug: g.slug}})),
+		fallback: 'blocking'
+	};
+}
 
 export default function GalleryItemPage() {
 	const {t} = useTranslation('common');
