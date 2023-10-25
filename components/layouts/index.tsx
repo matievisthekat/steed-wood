@@ -1,4 +1,5 @@
 import {PropsWithChildren, useEffect, useState} from 'react';
+import {Analytics} from '@vercel/analytics/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
@@ -115,7 +116,10 @@ export default function Layout(props: Props) {
 					</button>
 				</div>
 			)}
-			<main className='relative h-full w-full min-h-full'>{props.children}</main>
+			<main className='relative h-full w-full min-h-full'>
+				{props.children}
+				<Analytics />
+			</main>
 			<footer className={`${styles.footer} px-4 pt-16 mx-auto w-full relative z-10 md:px-24 lg:px-8`}>
 				<div className='flex flex-row flex-wrap justify-center align-middle mb-8'>
 					<div className=''>
